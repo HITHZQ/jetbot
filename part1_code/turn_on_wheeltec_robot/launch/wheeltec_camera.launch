@@ -1,0 +1,14 @@
+<launch>
+    <arg name="camera_mode"  default="Astra_S"/>
+    <arg name="if_usb_cam" default="false"/>
+
+    <!-- 启动奥比中光Astra_S相机 -->
+    <group if="$(eval camera_mode == 'Astra_S' or camera_mode == 'Astra_S+RgbCam')">
+        <include unless="$(eval if_usb_cam and camera_mode == 'Astra_S+RgbCam')" file="$(find astra_camera)/launch/astra.launch"/>
+        <node if="$(eval if_usb_cam and camera_mode == 'Astra_S')" name="usb_cam" pkg="usb_cam" type="app_read.py" >
+            <remap from="/usb_cam/image_raw/compressed" to="/image_raw/compressed"/>
+        </node>
+    </group>
+
+</launch>
+
