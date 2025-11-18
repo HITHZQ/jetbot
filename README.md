@@ -1,4 +1,5 @@
 # jetbot
+#part1--5 tasks
 1. JetBot Hardware and Software Environment Configuration  
    Understand the hardware components of the JetBot and their functions;  
    Configure the virtual machine environment and establish an SSH remote connection to the JetBot. Set up the network connection between the JetBot and the virtual machine to ensure they operate within the same network.  
